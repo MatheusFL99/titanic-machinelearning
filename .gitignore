@@ -1,0 +1,19 @@
+# ambientes virtuais
+venv/
+
+# dados utilizados
+data/*.csv
+
+# Arquivos temporários do Jupyter
+.ipynb_checkpoints/
+
+# Arquivos do sistema
+__pycache__/
+*.py[cod]
+*.DS_Store
+
+# Arquivos de cache do JupyterLab
+.jupyterlab/
+
+# Arquivos de log
+*.log
