@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -5,19 +7,30 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
 
+
 # configuracao
 st.set_page_config(page_title="Titanic Dashboard", layout="wide")
+current_dir = Path(__file__).parent
 
 # load dos dados
 @st.cache_data
 def load_data():
-    train = pd.read_csv('../data/train.csv')
-    test = pd.read_csv('../data/test.csv')
+    data_dir = current_dir.parent / "data" 
+
+    train_path = data_dir / "train.csv"
+    test_path = data_dir / "test.csv"
+
+    train = pd.read_csv(train_path)
+    test = pd.read_csv(test_path)
     return train, test
 
 @st.cache_resource
 def load_model():
-    return joblib.load('../model/titanic_model.pkl')
+    model_dir = current_dir.parent / "model"
+
+    titanic_path = model_dir / "titanic_model.pkl"
+    titanic_model = joblib.load(titanic_path)
+    return titanic_model 
 
 train_df, test_Df = load_data()
 model = load_model()
