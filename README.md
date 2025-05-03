@@ -4,13 +4,14 @@ Este projeto utiliza aprendizado de máquina para prever a sobrevivência de pas
 
 ## Objetivo
 
-O objetivo principal é construir um modelo de classificação que possa prever se um passageiro sobreviveu ou não, utilizando variáveis como idade, sexo, classe da cabine, entre outras.
+O objetivo principal é construir um modelo de classificação que possa prever se um passageiro sobreviveu ou não, utilizando variáveis como idade, sexo, classe da cabine, entre outras. E criar um dashboard interativo para análise exploratória e um sistema de previsão em tempo real
 
 ## Estrutura do Projeto
 
 - `data/`: Deve conter os conjuntos de dados utilizados no projeto. Disponiveis em https://www.kaggle.com/competitions/titanic
 - `notebooks/`: Notebook Jupyter com a análise exploratória e desenvolvimento do modelo.
 - `README.md`: Documentação do projeto.
+- `model/`: Modelo treinado
 
 ## 📦 Tecnologias utilizadas
 
@@ -20,6 +21,25 @@ O objetivo principal é construir um modelo de classificação que possa prever 
 - Scikit-learn
 - Matplotlib
 - Seaborn
+- Joblib
+- Plotly
+- Streamlit
+
+## 🔍 Principais Funcionalidades
+
+**Dashboard Interativo**
+
+- Visualizações dinâmicas com filtros em tempo real
+- Gráficos interativos de sobrevivência por classe/idade
+- Matriz de correlação entre variáveis
+- Exibição de dados brutos
+
+**Sistema de Previsão**
+
+- Interface para entrada de dados
+- Previsão instantânea com porcentagem de confiança
+- Visualização de probabilidades detalhadas
+- Suporte para múltiplos cenários
 
 ## 📊 Etapas realizadas
 
@@ -29,6 +49,7 @@ O objetivo principal é construir um modelo de classificação que possa prever 
 - Separação entre treino e teste
 - Criação e treinamento de modelo de Regressão Logística
 - Avaliação de desempenho (acurácia, matriz de confusão, relatório)
+- Desenvolvimento de dashboard interativo
 
 ## 🚀 Como rodar o projeto
 
@@ -49,4 +70,13 @@ O objetivo principal é construir um modelo de classificação que possa prever 
    ```bash
    pip install -r requirements.txt
    ```
-4. Execute os notebooks ou scripts para treinar e avaliar o modelo.
+4. Execute o notebook para treinar o modelo:
+
+   ```bash
+   jupyter lab notebooks/titanic_classification.ipynb
+   ```
+
+5. Execute o dashboard interativo:
+   ```bash
+   streamlit run src/dashboard.py
+   ```
